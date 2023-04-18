@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+}
+
+#wrapper{
+    margin: 0px auto;
+    width: 1000px;
+    height: 1200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: baseline  ;
+    justify-content: space-around;
+
+
+}
+
+#title{
+    position: absolute;
+    font-size: 50px;
+    top: 250px;
+}
+
+#photoZone{
+    position: relative;
+    width: 70%;
+    height: 40%;
+    border-radius: 10px;
+    
+
+}
+
+#leftArrow{
+    transform: rotate(180deg);
+}
+
+.arrows{
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    border: 1px solid black;
+    background-image: url(aroow.webp);
+    background-size: contain;
+}
+
+.arrows:hover{
+    background-color: rgb(174, 171, 171);
+}
+
+.arrows:active{
+    border: 1px solid white;
+}
+
+
+#photoNavBar{
+    margin-top: 20px;
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    top: 70%;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+#photoNavBar div{
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+#photoNavBar div:hover{
+    background-color: white;
+    background-color: rgb(135, 133, 133);
+}
+
+#photoNavBar div:active{
+    border:none;
+    background-color: rgb(174, 171, 171);
+}
+img{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 2px black solid;
+}
+
+.circleHighlight{
+    background-color: rgb(74, 72, 72);
+}
+
