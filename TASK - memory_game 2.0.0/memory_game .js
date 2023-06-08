@@ -4,7 +4,7 @@ const cardsArr = [
 const newCardsArr = [];
 
 var wrapper = document.getElementsByClassName("wrapper")[0],
-  isTowCardFlipped = false,
+  isTwoCardFlipped = false,
   firstCard,
   points;
 
@@ -17,6 +17,7 @@ function NOTE(text) {
   note.style.display = "block";
   note.addEventListener("click", start_game);
 }
+
 function start_game() {
   note.style.display = "none";
   set_cards(cardsArr, newCardsArr);
@@ -25,9 +26,8 @@ function start_game() {
   var box = document.getElementsByClassName("box");
   for (let i = 0; i < newCardsArr.length; i++) {
     box[i].addEventListener("keyup", function () {
-      if (this.style.backgroundImage == "" && !isTowCardFlipped) {
+      if (this.style.backgroundImage == "" && !isTwoCardFlipped)
         flip_cards(this, i, newCardsArr);
-      }
     });
   }
 }
@@ -37,19 +37,17 @@ function flip_cards(elem, index, arr) {
   if (firstCard == undefined) {
     firstCard = elem;
   } else if (firstCard.style.backgroundImage != elem.style.backgroundImage) {
-    isTowCardFlipped = true;
+    isTwoCardFlipped = true;
     setTimeout(function () {
       firstCard.style.backgroundImage = "";
       elem.style.backgroundImage = "";
       firstCard = undefined;
-      isTowCardFlipped = false;
+      isTwoCardFlipped = false;
     }, 1000);
   } else {
     points++;
     firstCard = undefined;
     document.getElementById("points").innerHTML = points;
-    console.log(arr.length / 2);
-    console.log(points);
     if (points == arr.length / 2) {
       NOTE("you won ! <br> press to resrart...");
     }
@@ -57,7 +55,6 @@ function flip_cards(elem, index, arr) {
 }
 
 function set_cards(arr, newArr) {
-  console.log(true);
   newArr.splice(0, newArr.length);
   points = 0;
   for (const i of arr) {
